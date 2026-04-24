@@ -1,0 +1,6 @@
+uint16 address
+uint16 count
+---
+bool success
+string message
+bool[] values
