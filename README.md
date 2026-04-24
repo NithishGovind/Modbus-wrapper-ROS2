@@ -50,10 +50,10 @@ flowchart TD
     CONN -- no --> DIAL[connect with 3s<br/>SO_SNDTIMEO/SO_RCVTIMEO]
     DIAL -- fail --> ERR[log error,<br/>return success=false]
     DIAL -- ok --> BUILD
-    CONN -- yes --> BUILD[build MBAP header:<br/>tx_id, proto=0, length, unit_id<br/>+ PDU fc|payload]
+    CONN -- yes --> BUILD["build MBAP header:<br/>tx_id, proto=0, length, unit_id<br/>+ PDU (fc + payload)"]
 
     BUILD --> SEND[send_all and recv MBAP+PDU]
-    SEND --> VAL{tx_id match?<br/>fc echo?<br/>exception (fc|0x80)?}
+    SEND --> VAL{"tx_id match?<br/>fc echo?<br/>exception fc OR 0x80?"}
     VAL -- mismatch --> DROP[disconnect socket,<br/>return error]
     VAL -- exception --> EXC[return error,<br/>keep socket]
     VAL -- ok --> DECODE[decode response]
