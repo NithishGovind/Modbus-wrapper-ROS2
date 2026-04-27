@@ -135,7 +135,8 @@ All commands run **inside WSL**. From a Windows shell, prefix with
 # Enter WSL first if you're on PowerShell/cmd:
 #   wsl
 
-cd /mnt/c/Users/gnith/Merlin/plc/plc_ws/ros2_ws
+# cd /mnt/c/Users/gnith/Merlin/plc/plc_ws/ros2_ws 
+
 source /opt/ros/humble/setup.bash     # or /opt/ros/rolling/setup.bash
 
 colcon build --packages-select ros2_modbus ros2_modbus_py --symlink-install

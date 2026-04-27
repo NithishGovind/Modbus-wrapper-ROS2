@@ -66,7 +66,7 @@ private:
   // --- State ---
   std::string plc_ip_;
   int plc_port_{502};
-  int slave_id_{0};
+  int slave_id_{}; // optionally settable slave/unit id, default 0 for compatibility with some PLCs that ignore it
   double poll_rate_hz_{1.0};
   int poll_reg_address_{0};
   int poll_reg_count_{10};
