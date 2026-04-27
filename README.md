@@ -212,3 +212,4 @@ ros2 topic echo /modbus/coils
 - Diagnostics/status topic for health reporting
 - Connection-state publisher (connected/disconnected)
 - Request/response latency tracking and metrics
+- Firewall & Security
