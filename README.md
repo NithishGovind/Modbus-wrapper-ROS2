@@ -1,4 +1,4 @@
-# ros2_modbus — ROS 2 Modbus TCP Bridge
+# ros2_modbus - ROS 2 Modbus TCP Bridge
 
 A pair of ROS 2 packages that expose a Modbus TCP PLC to the ROS 2 graph as
 topics and services. The transport is implemented directly on top of POSIX
@@ -202,3 +202,13 @@ ros2 topic echo /modbus/coils
   a `std::mutex`, so poll-timer and service callbacks serialize cleanly.
 - **Auto-reconnect**: any socket-level failure closes the fd; the next
   `transact()` reopens it. No crash, no backoff loop.
+
+---
+## To Do
+
+- Batch operations to reduce request overhead
+- Non-blocking/asynchronous request pipeline
+- Retry policy with configurable backoff
+- Diagnostics/status topic for health reporting
+- Connection-state publisher (connected/disconnected)
+- Request/response latency tracking and metrics
