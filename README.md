@@ -2,7 +2,7 @@
 
 A pair of ROS 2 packages that expose a Modbus TCP PLC to the ROS 2 graph as
 topics and services. The transport is implemented directly on top of POSIX
-sockets — **no libmodbus, pymodbus, or any other Modbus library is used**.
+sockets **no libmodbus, pymodbus, or any other Modbus library is used**.
 
 | Package          | Lang   | Build type     | What it does                                                      |
 | ---------------- | ------ | -------------- | ----------------------------------------------------------------- |
